@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Page-Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!--Tailwind CSS CDN link-->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#E9FAF5] text-[#222222] font-['Poppins']">
+    <div class="w-full max-w-[1200px] mx-auto px-4 md:px-6 lg:px-12 mt-5">
+        <div class="flex items-center justify-between bg-white border border-gray-400 rounded-xl shadow-sm px-4 py-2">
+            <a href="dashboard.html" class="text-xl font-bold">
+                Campus<span class="text-[#FF5A4F]">Bite</span>
+            </a>
+
+            <div class="flex items-center gap-4">
+                <p>Admin</p>
+                <button type="button" id="logoutbtn"
+                    class="border border-[#FF5A4F] text-[#FF5A4F] px-3 py-2 rounded-lg hover:bg-[#FF5A4F] hover:text-white">
+                    Logout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!---Main-->
+
+    <!-- Admin layout -->
+    <div class="flex flex-col lg:flex-row w-full max-w-[1200px] mx-auto px-4 md:px-6 lg:px-12 mt-10 gap-5">
+
+        <aside class="w-full lg:w-56 lg:mt-16 self-start bg-white border border-gray-400 rounded-xl p-4 mb-4">
+            <nav class="flex flex-col gap-1">
+
+                <a href="dashboard.html" class="px-3 py-2 rounded-lg hover:bg-[#E9FAF5]">
+                    Dashboard
+                </a>
+
+                <a href="restaurants.html" class="px-3 py-2 rounded-lg hover:bg-[#E9FAF5]">
+                    Restaurants
+                </a>
+
+                <a href="fooditems.html" class="px-3 py-2 rounded-lg hover:bg-[#E9FAF5]">
+                    Food Items
+                </a>
+
+                <a href="orders.html" class="px-3 py-2 rounded-lg hover:bg-[#E9FAF5]">
+                    Orders
+                </a>
+
+                <a href="student.html" class="px-3 py-2 rounded-lg bg-[#FFF1F0] text-[#FF5A4F] font-semibold">
+                    Students
+                </a>
+            </nav>
+        </aside>
+
+
+        <main class="flex-1">
+            <h1 class="text-2xl md:text-4xl text-center font-semibold">Students List</h1>
+
+            <section class="w-full sm:w-64 mt-6 bg-white border border-gray-300 rounded-xl p-5 shadow-sm">
+                <p class="text-sm text-gray-500">Total Students</p>
+                <p id="total-students" class="text-2xl font-semibold mt-1">2</p>
+            </section>
+            <div class="bg-white border border-gray-300 rounded-xl overflow-x-auto mt-8 shadow-sm">
+                <table class="w-full min-w-[650px] text-left">
+                    <thead class="bg-[#DDF6EF]">
+                        <tr>
+                            <th class="p-3">Student ID</th>
+                            <th class="p-3">Name</th>
+                            <th class="p-3">Department</th>
+                            <th class="p-3">Email</th>
+                        </tr>
+                    </thead>
+
+
+
+                    <tbody>
+                        <tr>
+                            <td class="p-3 border-b">STU001</td>
+                            <td class="p-3 border-b">Arun</td>
+                            <td class="p-3 border-b">CSE</td>
+                            <td class="p-3 border-b">arun@gmail.com</td>
+                        </tr>
+
+                        <tr>
+                            <td class="p-3 border-b">STU002</td>
+                            <td class="p-3 border-b">Priya</td>
+                            <td class="p-3 border-b">ECE</td>
+                            <td class="p-3 border-b">priya@gmail.com</td>
+                        </tr>
+                    </tbody>
+
+
+                </table>
+            </div>
+
+        </main>
+    </div>
+    <script src="student.js"></script>
+</body>
+
+</html>
