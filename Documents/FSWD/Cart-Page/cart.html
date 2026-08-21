@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Cart</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="cart-container">
+
+        <!-- Header -->
+        <header class="cart-header">
+            <i class="fa-solid fa-arrow-left back-icon"></i>
+            <h2 class="cart-header__title" >My Cart</h2>
+        </header>
+
+
+        <!-- Cart Items -->
+        <section class="cart-items" id="cartItems">
+
+
+           
+            <!-- Item 1 -->
+            <div class="cart-item"  data-price="149">
+
+                <img src="./Image/burger.png"
+                     alt="Cheesy Chicken Burger"
+                     class="food-image">
+
+                <div class="item-details">
+                    <h3 id="burger">Cheesy Chicken Burger</h3>
+                    <p class="price-details">₹149</p>
+                </div>
+
+                <div class="quantity-control">
+                    <button class="remove-cart">-</button>
+                    <span class="cart-value">1</span>
+                    <button class="add-cart">+</button>
+                </div>
+
+                <div class="delete-btn">
+                <button class="delete-btn">
+                    <i class="fa-regular fa-trash-can"></i>
+                </button>
+                </div>
+            </div>
+
+
+              <!-- Item 1 -->
+            <div class="cart-item" data-price="99">
+
+                <img src="./Image/frenchfries.png"
+                     alt="Peri Peri Fries"
+                     class="food-image">
+
+                <div class="item-details">
+                    <h3 id="fries">Peri Peri Fries</h3>
+                    <p class="price-details">₹99</p>
+                </div>
+
+                <div class="quantity-control">
+                    <button class="remove-cart">-</button>
+                    <span class="cart-value">1</span>
+                    <button class="add-cart">+</button>
+                </div>
+                
+                <div class="delete-btn">
+                <button>
+                    <i class="fa-regular fa-trash-can"></i>
+                </button>
+                </div>
+
+            </div>
+
+
+               <!-- Item 3 -->
+            <div class="cart-item"  data-price="89">
+
+                <img src="./Image/coldcoffee.png"
+                     alt="Cold Coffee"
+                     class="food-image">
+
+                <div class="item-details">
+                    <h3 is="coffee">Cold Coffee</h3>
+                    <p class="price-details">₹89</p>
+                </div>
+
+               <div class="quantity-control">
+                    <button class="remove-cart">-</button>
+                    <span class="cart-value">1</span>
+                    <button class="add-cart">+</button>
+                </div>
+
+                <div class="delete-btn">
+                <button>
+                    <i class="fa-regular fa-trash-can"></i>
+                </button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Coupon -->
+        <section class="coupon-section">
+
+            <h3>Apply Coupon</h3>
+
+            <div class="coupon-box">
+
+                <input
+                    type="text"
+                     id="couponInput"
+                    placeholder="Enter coupon code"
+                >
+
+                <button id="couponBtn">Apply</button>
+                <div>
+                <p id="couponMessage"></p>
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- Price Summary -->
+        <section class="price-summary">
+
+            <div class="price-row">
+                <span>Subtotal</span>
+                <strong id="subtotalAmount">₹0</strong>
+            </div>
+
+            <div class="price-row">
+                <span>Delivery Fee</span>
+                <strong id="deliveryAmount">₹0</strong>
+            </div>
+
+            <div class="price-row discount">
+                <span>Discount (CAMPUS20)</span>
+                <strong id="disAmount">-₹0</strong>
+            </div>
+
+        </section>
+
+
+        <!-- Total -->
+        <div class="total-section">
+
+            <h2>Total</h2>
+
+            <h2 id="totalVal">₹0</h2>
+
+        </div>
+
+        <!-- Payment Method -->
+<section class="payment-section">
+
+    <h3>Payment Method</h3>
+
+    <div class="payment-options">
+
+        <!-- Cash on Delivery -->
+        <label class="payment-option">
+            <input
+                type="radio"
+                name="payment"
+                value="cod"
+                checked
+            >
+
+            <span class="payment-content">
+                <i class="fa-solid fa-money-bill-wave"></i>
+                <span>Cash on Delivery</span>
+            </span>
+        </label>
+
+
+        <!-- UPI -->
+        <label class="payment-option">
+            <input
+                type="radio"
+                name="payment"
+                value="upi"
+            >
+
+            <span class="payment-content">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <span>UPI</span>
+            </span>
+        </label>
+
+
+        <!-- Card -->
+        <label class="payment-option">
+            <input
+                type="radio"
+                name="payment"
+                value="card"
+            >
+
+            <span class="payment-content">
+                <i class="fa-regular fa-credit-card"></i>
+                <span>Card</span>
+            </span>
+        </label>
+
+    </div>
+
+</section>
+
+
+        <!-- Checkout -->
+        
+         
+        <button class="checkout-btn">
+            Place Order
+        </button>
+        
+
+    </div>
+    <script src="cart.js"></script>
+
+</body>
+</html>
