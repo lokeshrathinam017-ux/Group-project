@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Restaurant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!--Tailwind CSS CDN link-->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#E9FAF5] text-[#222222] font-['Poppins']">
+
+    <div class="w-full max-w-[1200px] mx-auto px-4 md:px-6 lg:px-12 mt-5">
+        <div class="flex items-center justify-between bg-white border border-gray-400 rounded-xl shadow-sm px-4 py-2">
+            <a href="dashboard.html" class="text-xl font-bold">
+                Campus<span class="text-[#FF5A4F]">Bite</span>
+            </a>
+
+            <div class="flex items-center gap-4">
+                <p>Admin</p>
+                <button type="button" id="logoutbtn"
+                    class="border border-[#FF5A4F] text-[#FF5A4F] px-3 py-2 rounded-lg hover:bg-[#FF5A4F] hover:text-white">
+                    Logout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!---Main-->
+
+    <!-- Admin layout -->
+    <div class="flex flex-col lg:flex-row w-full max-w-[1200px] mx-auto px-4 md:px-6 lg:px-12 mt-8 gap-5">
+
+        <aside class="w-full lg:w-56 lg:mt-16 self-start bg-white border border-gray-400 rounded-xl p-4 mb-4">
+            <nav class="flex flex-col gap-1">
+
+                <nav class="flex flex-col gap-1">
+
+                    <a href="dashboard.html" class="px-3 py-2 rounded-lg hover:bg-[#E9FAF5]">
+                        Dashboard
+                    </a>
+
+                    <!-- Active Restaurant page -->
+                    <a href="restaurants_admin.html" class="px-3 py-2 rounded-lg bg-[#FFF1F0] text-[#FF5A4F] font-semibold">
+                        Restaurants
+                    </a>
+
+                    <a href="fooditems.html" class="px-3 py-2 rounded-lg hover:bg-[#E9FAF5]">
+                        Food Items
+                    </a>
+
+                    <a href="orders.html" class="px-3 py-2 rounded-lg hover:bg-[#E9FAF5]">
+                        Orders
+                    </a>
+
+                    <a href="student.html" class="px-3 py-2 rounded-lg hover:bg-[#E9FAF5]">
+                        Students
+                    </a>
+
+                </nav>
+            </nav>
+        </aside>
+
+
+        <main class="flex-1">
+            <h1 class="text-2xl md:text-4xl text-center font-semibold mb-4">Manage Restaurants</h1>
+
+            <form id="restaurant-form" class="border border-gray-300  bg-white rounded-xl p-5">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                    <input id="restaurant-name" type="text" placeholder="Restaurant name"
+                        class="border border-gray-400 rounded-lg p-2" required>
+
+                    <input id="restaurant-location" type="text" placeholder="Location"
+                        class="border border-gray-400 rounded-lg p-2" required>
+
+                    <div class="flex gap-4 items-center">
+                        <label><input type="radio" name="category" value="Veg" required> Veg</label>
+                        <label><input type="radio" name="category" value="Non-Veg"> Non-Veg</label>
+                    </div>
+
+                    <select id="restaurant-status" class="w-full md:w-48 border border-gray-400 rounded-lg p-2">
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                    </select>
+                </div>
+                <button type="submit" class="bg-[#FF5A4F] text-white px-4 py-2 rounded-lg mt-5 hover:bg-[#E94E44]">
+                    Save Restaurant
+                </button>
+            </form>
+
+            <section class=" mb-4 text-left border bg-white border-gray-400 mt-3 overflow-x-auto rounded-xl">
+                <h2 class="text-center text-2xl m-3 font-semibold">Restaurant List</h2>
+            </section>
+            <div class="bg-white border border-gray-300 rounded-xl overflow-hidden shadow-sm">
+                <table class="w-full text-left">
+                    <thead class="bg-[#DDF6EF]">
+                        <tr>
+                            <th class="p-3">ID</th>
+                            <th class="p-3">Name</th>
+                            <th class="p-3">Category</th>
+                            <th class="p-3">Location</th>
+                            <th class="p-3">Status</th>
+                            <th class="p-3">Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="restaurant-body"></tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script src="restaurants_admin.js"></script>
+</body>
+
+</html>

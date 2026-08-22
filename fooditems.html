@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Food Items</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!--Tailwind CSS CDN link-->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#E9FAF5] text-[#222222] font-['Poppins']">
+
+    <div class="w-full max-w-[1200px] mx-auto px-4 md:px-6 lg:px-12 mt-5">
+        <div class="flex items-center justify-between bg-white border border-gray-400 rounded-xl shadow-sm px-4 py-2">
+            <a href="dashboard.html" class="text-xl font-bold">
+                Campus<span class="text-[#FF5A4F]">Bite</span>
+            </a>
+
+            <div class="flex items-center gap-4">
+                <p>Admin</p>
+                <button type="button" id="logoutbtn"
+                    class="border border-[#FF5A4F] text-[#FF5A4F] px-3 py-2 rounded-lg hover:bg-[#FF5A4F] hover:text-white">
+                    Logout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!---Main-->
+
+    <!-- Admin layout -->
+    <div class="flex flex-col lg:flex-row w-full max-w-[1200px] mx-auto px-4 md:px-6 lg:px-12 mt-8 gap-5">
+
+        <!-- Left sidebar -->
+
+        <aside class="w-full lg:w-56 lg:mt-16 self-start bg-white border border-gray-400 rounded-xl p-4 mb-4">
+            <nav class="flex flex-col gap-1">
+
+                <a href="dashboard.html" class="px-3 py-2 rounded-lg hover:bg-[#E9FAF5]">
+                    Dashboard
+                </a>
+
+                <a href="restaurants_admin.html" class="px-3 py-2 rounded-lg hover:bg-[#E9FAF5]">
+                    Restaurants
+                </a>
+
+                <a href="fooditems.html" class="px-3 py-2 rounded-lg bg-[#FFF1F0] text-[#FF5A4F] font-semibold">
+                    Food Items
+                </a>
+
+                <a href="orders.html" class="px-3 py-2 rounded-lg hover:bg-[#E9FAF5]">
+                    Orders
+                </a>
+
+                <a href="student.html" class="px-3 py-2 rounded-lg hover:bg-[#E9FAF5]">
+                    Students
+                </a>
+
+            </nav>
+        </aside>
+
+
+        <main class="flex-1 w-full mt-8">
+            <h1 class="text-2xl md:text-4xl text-center font-semibold mb-4">
+                Food Items
+            </h1>
+            <form id="food-form"
+                class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-white border border-gray-300 border-l-4 border-l-[#FF5A4F] rounded-xl p-5 shadow-sm">
+
+                <input id="food-name" type="text" placeholder="Food name"
+                    class="w-full border border-gray-400 rounded-lg p-2" required>
+
+                <input id="food-restaurant" type="text" placeholder="Restaurant"
+                    class="w-full border border-gray-400 rounded-lg p-2" required>
+
+                <input id="food-price" type="number" placeholder="Price"
+                    class="w-full border border-gray-400 rounded-lg p-2" required>
+
+                <select id="food-status" class="w-full border border-gray-400 rounded-lg p-2">
+                    <option>Available</option>
+                    <option>Unavailable</option>
+                </select>
+
+                <button type="submit"
+                    class="md:col-span-2 w-fit bg-[#FF5A4F] text-white px-4 py-2 rounded-lg hover:bg-[#E94E44]">
+                    Save
+                </button>
+            </form>
+
+            <div class="mt-6 bg-white border border-gray-400 rounded-xl overflow-x-auto">
+
+                <table class="w-full min-w-[700px] text-left border-collapse">
+
+                    <thead class="bg-[#DDF6EF]">
+                        <tr>
+                            <th class="p-3">ID</th>
+                            <th class="p-3">Food</th>
+                            <th class="p-3">Restaurant</th>
+                            <th class="p-3">Price</th>
+                            <th class="p-3">Status</th>
+                            <th class="p-3">Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="food-list"></tbody>
+
+                </table>
+            </div>
+
+        </main>
+    </div>
+    <script src="fooditems.js"></script>
+</body>
+
+</html>

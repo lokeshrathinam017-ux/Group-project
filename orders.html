@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!--Tailwind CSS CDN link-->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#E9FAF5] text-[#222222] font-['Poppins']">
+
+    <div class="w-full max-w-[1200px] mx-auto px-4 md:px-6 lg:px-12 mt-5">
+        <div class="flex items-center justify-between bg-white border border-gray-400 rounded-xl shadow-sm px-4 py-2">
+            <a href="dashboard.html" class="text-xl font-bold">
+                Campus<span class="text-[#FF5A4F]">Bite</span>
+            </a>
+
+            <div class="flex items-center gap-4">
+                <p>Admin</p>
+                <button type="button" id="logoutbtn"
+                    class="border border-[#FF5A4F] text-[#FF5A4F] px-3 py-2 rounded-lg hover:bg-[#FF5A4F] hover:text-white">
+                    Logout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!---Main-->
+
+    <!-- Admin layout -->
+    <div class="flex flex-col lg:flex-row w-full max-w-[1200px] mx-auto px-4 md:px-6 lg:px-12 mt-8 gap-5">
+
+        <!-- Left sidebar -->
+        <aside class="w-full lg:w-56 lg:mt-16 self-start bg-white border border-gray-400 rounded-xl p-4 mb-4">
+            <nav class="flex flex-col gap-1">
+
+                <a href="dashboard.html" class="px-3 py-2 rounded-lg hover:bg-[#E9FAF5]">
+                    Dashboard
+                </a>
+                <a href="restaurants_admin.html" class="px-3 py-2 rounded-lg hover:bg-[#E9FAF5]">
+                    Restaurants
+                </a>
+
+                <a href="fooditems.html" class="px-3 py-2 rounded-lg hover:bg-[#E9FAF5]">
+                    Food Items
+                </a>
+
+                <a href="orders.html" class="px-3 py-2 rounded-lg bg-[#FFF1F0] text-[#FF5A4F] font-semibold">
+                    Orders
+                </a>
+
+                <a href="student.html" class="px-3 py-2 rounded-lg hover:bg-[#E9FAF5]">
+                    Students
+                </a>
+
+            </nav>
+        </aside>
+
+        <main class="flex-1 mt-8">
+
+            <h1 class="text-2xl md:text-4xl text-center font-semibold mb-4">
+                Manage Orders
+            </h1>
+            <!-- Order summary cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+
+                <!-- Total Orders -->
+                <section class="bg-white border border-gray-300 border-l-4 border-l-[#FF5A4F] rounded-xl p-4 shadow-sm">
+
+                    <p class="text-sm text-gray-500">Total Orders</p>
+
+                    <p id="total-orders" class="text-2xl font-semibold text-[#FF5A4F] mt-1">
+                        2
+                    </p>
+                </section>
+
+                <!-- Pending Orders -->
+                <section
+                    class="bg-white border border-gray-300 border-l-4 border-l-yellow-400 rounded-xl p-4 shadow-sm">
+
+                    <p class="text-sm text-gray-500">Pending</p>
+
+                    <p id="pending-orders" class="text-2xl font-semibold text-yellow-600 mt-1">
+                        2
+                    </p>
+                </section>
+
+                <!-- Accepted Orders -->
+                <section class="bg-white border border-gray-300 border-l-4 border-l-green-500 rounded-xl p-4 shadow-sm">
+
+                    <p class="text-sm text-gray-500">Accepted</p>
+
+                    <p id="accepted-orders" class="text-2xl font-semibold text-green-600 mt-1">
+                        0
+                    </p>
+                </section>
+
+                <!-- Rejected Orders -->
+                <section class="bg-white border border-gray-300 border-l-4 border-l-red-400 rounded-xl p-4 shadow-sm">
+
+                    <p class="text-sm text-gray-500">Rejected</p>
+
+                    <p id="rejected-orders" class="text-2xl font-semibold text-red-500 mt-1">
+                        0
+                    </p>
+                </section>
+
+            </div>
+            <div class="mt-6 bg-white border border-gray-400 rounded-xl overflow-x-auto">
+
+                <table class="w-full min-w-[700px] text-left border-collapse">
+                    <thead class="bg-[#E9FAF5] ">
+                        <tr class="divide-x divide-gray-400 border-b border-gray-400">
+
+                            <th class="p-3">Order ID</th>
+                            <th class="p-3">Student</th>
+                            <th class="p-3">Food</th>
+                            <th class="p-3">Price</th>
+                            <th class="p-3">Status</th>
+                            <th class="p-3">Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr class="divide-x divide-gray-400 border-b border-gray-400">
+                            <td class="p-3 border-b border-gray-400">ORD001</td>
+                            <td class="p-3 border-b">Arun</td>
+                            <td class="p-3 border-b">Veg Burger</td>
+                            <td class="p-3 border-b">₹80</td>
+
+                            <td class="p-3 border-b">
+                                <span class="order-status">Pending</span>
+                            </td>
+
+                            <td class="p-3 border-b">
+                                <button
+                                    class="accept-btn border border-green-600 text-green-600 px-3 py-1 rounded-lg mr-2">
+                                    Accept
+                                </button>
+
+                                <button class="reject-btn border border-red-500 text-red-500 px-3 py-1 rounded-lg">
+                                    Reject
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="divide-x divide-gray-400 border-b border-gray-400">
+                            <td class="p-3 border-b border-gray-400">ORD002</td>
+                            <td class="p-3 border-b">Priya</td>
+                            <td class="p-3 border-b">Fried Rice</td>
+                            <td class="p-3 border-b">₹100</td>
+                            <td class="p-3 border-b">
+                                <span class="order-status">Pending</span>
+                            </td>
+                            <td class="p-3 border-b">
+                                <button
+                                    class="accept-btn border border-green-600 text-green-600 px-3 py-1 rounded-lg mr-2">
+                                    Accept
+                                </button>
+
+                                <button class="reject-btn border border-red-500 text-red-500 px-3 py-1 rounded-lg">
+                                    Reject
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </main>
+
+    </div>
+
+    <script src="orders.js"></script>
+</body>
+
+</html>

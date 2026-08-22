@@ -1,0 +1,286 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #F8FAFA;
+    color: #222222;
+}
+
+.orders-container {
+    width: 100%;
+    max-width: 450px;
+    min-height: 100vh;
+    margin: auto;
+    background-color: white;
+}
+
+.orders-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.orders-header h1 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.back-btn {
+    text-decoration: none;
+    color: #222222;
+    font-size: 24px;
+}
+
+.back-btn:hover {
+    color: #FF5A4F;
+}
+
+.order-card {
+    margin: 20px;
+    padding: 18px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background-color: white;
+}
+
+.order-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.order-top h2 {
+    margin: 0;
+    font-size: 17px;
+}
+
+.status {
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.preparing {
+    background-color: #FFF1EF;
+    color: #FF5A4F;
+}
+
+.ready {
+    background-color: #E9FAF5;
+    color: #16866D;
+}
+
+.delivered {
+    background-color: #f3f4f6;
+    color: #6B7280;
+}
+
+.order-date {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #6B7280;
+}
+
+.order-items {
+    margin-top: 15px;
+    padding-top: 12px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.order-items p {
+    margin: 6px 0;
+    font-size: 14px;
+    color: #4B5563;
+}
+
+.order-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+}
+
+.total-label {
+    margin: 0;
+    font-size: 13px;
+    color: #6B7280;
+}
+
+.total-price {
+    margin: 3px 0 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.track-btn {
+    text-decoration: none;
+    background-color: #FF5A4F;
+    color: white;
+    padding: 9px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.track-btn:hover {
+    background-color: #e94d43;
+}
+
+@media screen and (max-width: 480px) {
+
+    .order-card {
+        margin: 15px;
+    }
+
+    .orders-header {
+        padding: 16px;
+    }
+
+    .order-top {
+        align-items: flex-start;
+    }
+
+    .status {
+        font-size: 11px;
+    }
+}
+
+
+
+/* for tracker page*/
+
+/* ---------------- ORDER TRACKER ---------------- */
+
+.tracker-container {
+    width: 100%;
+    max-width: 450px;
+    min-height: 100vh;
+    margin: auto;
+    background-color: white;
+}
+
+.tracker-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.tracker-header h1 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.tracker-card {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+}
+
+.tracker-order-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.tracker-order-top h2 {
+    margin: 0 0 8px;
+    font-size: 18px;
+}
+
+.tracker-order-top p {
+    margin: 4px 0;
+    font-size: 13px;
+    color: #6B7280;
+}
+
+.tracker-status {
+    background-color: #FFF1EF;
+    color: #FF5A4F;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+
+/* Tracking section */
+
+.tracking {
+    margin-top: 25px;
+}
+
+.tracking-step {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.tracker-circle {
+    width: 36px;
+    height: 36px;
+
+    border: 2px solid #d1d5db;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #6B7280;
+    font-weight: 600;
+}
+
+.tracking-step h3 {
+    margin: 0;
+    font-size: 15px;
+}
+
+.tracking-step p {
+    margin: 4px 0 0;
+    font-size: 12px;
+    color: #6B7280;
+}
+
+
+/* Completed step */
+
+.completed .tracker-circle {
+    background-color: #39C6A5;
+    border-color: #39C6A5;
+    color: white;
+}
+
+
+/* Current step */
+
+.active .tracker-circle {
+    background-color: #FF5A4F;
+    border-color: #FF5A4F;
+    color: white;
+}
+
+.active h3 {
+    color: #FF5A4F;
+}
+
+
+/* Vertical line */
+
+.tracker-line {
+    width: 2px;
+    height: 35px;
+    background-color: #d1d5db;
+
+    margin-left: 17px;
+}
+
+.completed-line {
+    background-color: #39C6A5;
+}
