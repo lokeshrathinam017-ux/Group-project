@@ -1,3 +1,7 @@
+console.lo
+
+
+
 var logoutbtn = document.getElementById("logoutbtn")
 
 logoutbtn.addEventListener("click", function () {
